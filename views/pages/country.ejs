@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+<h1>Details for <%= countryName %></h1>
+
+<% if (countryData) { %>
+    <p><strong>Capital:</strong> <%= countryData.capital %></p>
+    <p><strong>Region:</strong> <%= countryData.region %></p>
+    <p><strong>Subregion:</strong> <%= countryData.subregion %></p>
+    <p><strong>Population:</strong> <%= countryData.population %></p>
+    <p><strong>Area:</strong> <%= countryData.area %> km²</p>
+    <p><strong>Coordinates:</strong> Latitude: <%= countryData.coordinates.latitude %>, Longitude: <%= countryData.coordinates.longitude %></p>
+    <p><strong>Currency:</strong> <%= countryData.currency %></p>
+    <p><strong>Languages:</strong> <%= countryData.languages.join(', ') %></p>
+
+    <!-- Flag Image container -->
+    <div class="flag-image-container">
+        <img src="<%= countryData.flag %>" alt="Flag of <%= countryName %>" />
+    </div>
+
+    <!-- If the user is not logged in, show the login/signup prompt -->
+    <% if (!user) { %>
+        <div class="login-signup-prompt">
+            <p>If you would like to save this country to your visited list, please <a href="/login">log in</a> or <a href="/signup">sign up</a>.</p>
+        </div>
+    <% } %>
+
+    <!-- Button to add the country to visited countries (only for logged-in users) -->
+    <% if (user) { %>
+        <form action="/country/add" method="post">
+            <input type="hidden" name="countryName" value="<%= countryName %>">
+            <button type="submit">Add to Visited Countries</button>
+        </form>
+    <% } %>
+
+<% } else { %>
+    <p>No data available for this country.</p>
+<% } %>
+
+<%- include('../partials/footer') %>
+

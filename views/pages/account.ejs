@@ -1,0 +1,8 @@
+<%- include('../partials/header') %>
+<h2>Visited Countries</h2>
+<ul>
+    <% countries.forEach(country => { %>
+        <li><%= country.country_name %></li>
+    <% }) %>
+</ul>
+<%- include('../partials/footer') %>

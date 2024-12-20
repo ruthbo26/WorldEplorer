@@ -1,0 +1,196 @@
+/* Apply a background image and blue color to the entire body */
+body {
+    font-family: Arial, sans-serif;
+    background: url('/images/roundmap.jpeg') no-repeat center center fixed; /* Globe image as background */
+    background-size: cover; /* Make sure the image covers the whole screen */
+    background-color: #007BFF; /* Blue background as a fallback */
+    color: #056bcb; /* White text color for contrast */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure the body covers the full viewport height */
+}
+
+/* Navigation styles */
+nav {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for navbar */
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: white; /* White text color */
+    font-size: 16px;
+}
+
+/* Form styling */
+form input, form button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Style for all the page content (e.g., h1, p) */
+h1, p {
+    text-align: center;
+    color: rgb(221, 18, 18);
+}
+
+/* Button styling */
+button {
+    background-color: #28a745; /* Green button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Specific page content */
+.profile-container, .visited-countries-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.profile-container p, .visited-countries-container p {
+    color: white;
+    font-size: 18px;
+}
+
+/* Additional custom styles for forms on login/signup pages */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Light transparent background for forms */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Profile page specific */
+.profile-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Adjust text on login/signup page */
+.login-signup-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-signup-container input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Visited countries page */
+.visited-countries-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Center the flag image on the page */
+.flag-image-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100vh; /* Make sure it takes up the full height of the viewport */
+    text-align: center;
+}
+
+.flag-image-container img {
+    max-width: 100%; /* Ensure the flag is responsive */
+    height: auto; /* Maintain the aspect ratio */
+    border: 2px solid #fff; /* Optional: Add a border to the flag */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Add some style to the login/signup prompt message */
+.login-signup-prompt {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.login-signup-prompt a {
+    color: rgb(221, 18, 18); 
+    text-decoration: none;
+}
+
+.login-signup-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styles for the signup page */
+.signup-container {
+    text-align: center;  /* Center the text horizontally */
+    margin-top: 20px;  /* Add some space above */
+}
+
+.signup-container a {
+    color: rgb(221, 18, 18);
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size if necessary */
+}
+
+.signup-container a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Additional styles for the login page */
+.login-container {
+    text-align: center;  /* Center the text horizontally */
+    margin-top: 20px;  /* Add some space above */
+}
+
+.login-container a {
+    color: rgb(221, 18, 18);
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size if necessary */
+}
+
+/* Styling the list of visited countries */
+h2, h3 {
+    color: white; /* White text for contrast */
+    text-align: center;
+}
+
+/* Styling for the list container */
+.visited-countries-list {
+    list-style-type: none; 
+    padding: 20px; 
+    margin: 0 auto; /* Center the list container */
+    max-width: 600px; /* Set a maximum width for the list */
+    background-color: rgba(255, 255, 255, 0.3); 
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Styling for each list item */
+.visited-countries-list li {
+    color: red; /* Red color for text */
+    font-size: 18px; /* Font size for each country */
+    padding: 10px; /* Padding around each list item */
+    border-bottom: 1px solid #ddd; /* Border between list items */
+}
+
+/* Remove bottom border from the last list item */
+.visited-countries-list li:last-child {
+    border-bottom: none;
+}

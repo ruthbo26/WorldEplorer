@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<h1>Welcome, <%= user.username %>!</h1>
+
+<h2>Your Visited Countries:</h2>
+<ul class="visited-countries-list">
+    <% visitedCountries.forEach(country => { %>
+        <li><%= country.country_name %></li>
+    <% }) %>
+</ul>
+
+<!-- Add Country Search Form -->
+<h3>Search for a Country to Add to Your Visited List:</h3>
+<form action="/country" method="get">
+    <input type="text" name="name" placeholder="Enter country name" required>
+    <button type="submit">Search</button>
+</form>
+
+<%- include('../partials/footer') %>
+
