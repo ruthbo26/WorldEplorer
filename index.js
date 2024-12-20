@@ -1,3 +1,4 @@
+//import libraries and modules
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
@@ -10,31 +11,31 @@ const app = express();
 
 const port = 4000;
 
-// Use CORS middleware to allow cross-origin requests
+// Enables CORS, allowing the API to accept requests from other domains
 app.use(cors());
 
-// Middleware to handle JSON requests
-app.use(express.json());
 
-// Middleware to handle form data
-app.use(express.urlencoded({ extended: true })); 
+app.use(express.json()); // Middleware to handle JSON requests
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
+
+app.use(express.urlencoded({ extended: true })); // Middleware to handle form data
+
+
+app.set('view engine', 'ejs'); // Set EJS as the view engine
 app.set('views', path.join(__dirname, 'views'));  // Ensure that views folder is recognized
 
-// Serve static files (like CSS, images)
-app.use(express.static(path.join(__dirname, 'public')));
 
-// Session setup
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files (like CSS, images)
+
+// Session setup for storing user data across requests
 app.use(session({
-    secret: 'your-secret-key', // Change this to a real secret
+    secret: 'd3v3l0p3r', 
     resave: false,
     saveUninitialized: false,
 }));
 
-// Initialize passport and session
-app.use(passport.initialize());
+
+app.use(passport.initialize()); // Initialize passport for authentication
 app.use(passport.session());
 
 // Add user data to all views
@@ -52,7 +53,7 @@ app.get('/', (req, res) => {
 app.get('/country', async (req, res) => {
     const countryName = req.query.name;  // Get country name from query string
 
-    // Ensure if country name is provided
+    // Ensure if country name is provided, error code if not
     if (!countryName) {
         return res.status(400).send({
             message: 'Country name is required.',
